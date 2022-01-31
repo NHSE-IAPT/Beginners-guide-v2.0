@@ -1,10 +1,7 @@
+-- This query will return the total number of referrals to IAPT talking therapies, as displayed on the NHS Digital website 'lastest statistics' publication ----
+--- The script is designed to accompany the 'Looking at SQL queries' section of the IAPT beginners guide (2.1)
 
--- This query will return the total number of referrals to IAPT talking therapies, as displayed on the NHS Digital website 'lastest statistics' publication ---------------
-
---- This file is designed to accompany section [] of the IAPT beginners guide (2.1)
-
-
----- start of script ------------------------------------------------------------------------------------------------------------------------------------------------------
+---- start of script -------------------------------------------------------------------------------------------------------------------------------------------
 
 --- declare variables to hold values for PeriodStart and PeriodEnd dates
 
@@ -30,4 +27,4 @@ INNER JOIN [NHSE_IAPT_v2].[dbo].[IDS000_Header] h ON r.[UniqueSubmissionID] = h.
 
 WHERE UsePathway_Flag = 'True' AND IsLatest = 1 AND h.[ReportingPeriodStartDate] BETWEEN DATEADD(MONTH, 0, @PeriodStart) AND @PeriodStart
 
----- end of script --------------------------------------------------------------------------------------------------------------------------------------------------------
+---- end of script ---------------------------------------------------------------------------------------------------------------------------------------------
