@@ -1,5 +1,6 @@
--- This script is designed to accompany the 'Looking at SQL queries' section of the IAPT beginners guide (2.1)
---- The query will return the total number of referrals to IAPT talking therapies, as displayed on the NHS Digital website 'lastest statistics' publication ----
+-- This script is designed to accompany the 'Replicating published data' section of the IAPT beginners guide (2.1)
+
+-- The query will return the total number of referrals to IAPT talking therapies, as displayed on the NHS Digital website 'lastest statistics' publication ----
 
 ---- start of script -------------------------------------------------------------------------------------------------------------------------------------------
 
