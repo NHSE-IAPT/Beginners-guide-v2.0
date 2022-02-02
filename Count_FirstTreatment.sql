@@ -1,20 +1,18 @@
 
--- This query will return the total number of initial referrals acessing IAPT, as displayed on the NHS Digital website 'lastest statistics' publication ---------------
+-- This script is designed to accompany the 'Replicating published data' section of the IAPT beginners guide (2.1)
 
---- This file is designed to accompany section [] of the IAPT beginners guide (2.1)
+-- The query will return the total number of initial referrals acessing IAPT, as displayed on the NHS Digital website 'lastest statistics' publication --------
 
-
----- start of script --------------------------------------------------------------------------------------------------------------------------------------------------
+---- start of script -------------------------------------------------------------------------------------------------------------------------------------------
 
 --- declare variables to hold values for PeriodStart and PeriodEnd dates
-
 DECLARE @PeriodStart DATE
 DECLARE @PeriodEnd DATE
 
 --- set the values for PeriodStart and PeriodEnd dates
+SET @PeriodStart = 'yyyy-mm-dd' -- overwrite placeholder with required month start date
+SET @PeriodEnd = 'yyyy-mm-dd' -- overwrite placeholder with required month end date
 
-SET @PeriodStart = '2021-09-01'
-SET @PeriodEnd = '2021-09-30'
 
 -- SELECT statement
 
