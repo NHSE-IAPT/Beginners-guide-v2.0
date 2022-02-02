@@ -8,8 +8,8 @@ DECLARE @PeriodStart DATE
 DECLARE @PeriodEnd DATE
 
 --- set the values for PeriodStart and PeriodEnd dates
-SET @PeriodStart = '2021-09-01'
-SET @PeriodEnd = '2021-09-30'
+SET @PeriodStart = 'yyyy-mm-dd' -- overwrite placeholder with required month start date
+SET @PeriodEnd = 'yyyy-mm-dd' -- overwrite placeholder with required month end date
 
 -- SELECT statement uses COUNT(DISTINCT..) and CASE WHEN to return an aggregate value AS 'Count_IAPTReferrals' between the specified period start/end dates
 SELECT  COUNT(DISTINCT CASE WHEN ReferralRequestReceivedDate BETWEEN @PeriodStart and @PeriodEnd THEN PathwayID ELSE NULL END) AS Count_IAPTReferrals
