@@ -15,12 +15,12 @@ SET @PeriodEnd = 'yyyy-mm-dd' -- overwrite placeholder with required month end d
 -- SELECT statement
 SELECT  COUNT(DISTINCT CASE WHEN TherapySession_FirstDate BETWEEN @PeriodStart and @PeriodEnd THEN PathwayID ELSE NULL END) AS Count_FirstTreatment
 
--- FROM statement
+-- FROM statement points to the referrals table within the IAPT v2 database (AS r) including INNER JOINS on the IsLatest_SubmissionID and IDS000_Header tables
 FROM [NHSE_IAPT_v2].dbo.IDS101_Referral r
 INNER JOIN [NHSE_IAPT_v2].[dbo].[IsLatest_SubmissionID] l ON r.[UniqueSubmissionID] = l.[UniqueSubmissionID] AND r.AuditId = l.AuditId
 INNER JOIN [NHSE_IAPT_v2].[dbo].[IDS000_Header] h ON r.[UniqueSubmissionID] = h.[UniqueSubmissionID]
 
--- WHERE statement
+-- WHERE statement provides additional parameters to the query to ensure that all referrals are valid and within the specified period start/end dates
 WHERE UsePathway_Flag = 'True' AND IsLatest = 1 AND h.[ReportingPeriodStartDate] BETWEEN DATEADD(MONTH, 0, @PeriodStart) AND @PeriodStart
 
----- end of script ----------------------------------------------------------------------------------------------------------------------------------------------------
+---- end of script ---------------------------------------------------------------------------------------------------------------------------------------------
